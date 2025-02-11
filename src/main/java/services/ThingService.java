@@ -2,11 +2,13 @@ package services;
 
 import animals.Animal;
 import interfaces.IInventory;
+import org.springframework.stereotype.Component;
 import things.Thing;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ThingService {
     private List<IInventory> things = new ArrayList<>();
 

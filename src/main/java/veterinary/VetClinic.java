@@ -1,12 +1,18 @@
 package veterinary;
 
 import animals.Animal;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VetClinic {
 
     private int criteria;
 
     public VetClinic(int crit) {
+        this.criteria = crit;
+    }
+
+    public void setCriteria(int crit) {
         this.criteria = crit;
     }
 

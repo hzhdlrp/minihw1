@@ -2,12 +2,18 @@ package services;
 
 import animals.Animal;
 import interfaces.IAlive;
+import org.springframework.stereotype.Component;
 import things.Thing;
 import veterinary.VetClinic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Component
 public class Zoo {
+
+    public void setClinic(VetClinic clinic) {
+        this.clinic = clinic;
+    }
 
     public Zoo(int criteria) {
         this.clinic = new VetClinic(criteria);

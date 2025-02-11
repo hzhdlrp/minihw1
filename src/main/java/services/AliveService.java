@@ -2,11 +2,13 @@ package services;
 
 import animals.Animal;
 import interfaces.IAlive;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Component
 public class AliveService {
 
     private List<IAlive> animals = new ArrayList<>();

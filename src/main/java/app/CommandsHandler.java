@@ -5,12 +5,14 @@ import animals.herbos.Monkey;
 import animals.herbos.Rabbit;
 import animals.predators.Tiger;
 import animals.predators.Wolf;
+import org.springframework.stereotype.Component;
 import services.Zoo;
 import things.Computer;
 import things.Table;
 
 import java.util.Scanner;
 
+@Component
 public class CommandsHandler {
     public void handle(Zoo zoo) {
         while (handleOneCommand(zoo));
@@ -20,7 +22,7 @@ public class CommandsHandler {
         return scanner.nextInt();
     }
 
-    private boolean handleOneCommand(Zoo zoo) {
+    public boolean handleOneCommand(Zoo zoo) {
         System.out.println("type command:");
         String word = scanner.next();
         if (word.equals("end")) {
@@ -66,7 +68,7 @@ public class CommandsHandler {
         return true;
     }
 
-    public void createAnimal(Zoo zoo, String type, int health) {
+    private void createAnimal(Zoo zoo, String type, int health) {
         if (type.equals("monkey")) {
             zoo.addAnimal(new Monkey(health));
             return;
@@ -87,7 +89,7 @@ public class CommandsHandler {
         scanner.nextLine();
     }
 
-    public void createThing(Zoo zoo, String type) {
+    private void createThing(Zoo zoo, String type) {
         if (type.equals("table")) {
             zoo.addThing(new Table());
             return;
